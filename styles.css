@@ -2,11 +2,13 @@
 :root {
     --bg-color: #f4f4f4;
     --text-color: #333;
-    --header-footer-bg: #333;
+    --header-footer-bg: #282c34;
     --header-footer-text: #fff;
     --accent-color: #007BFF;
     --section-bg: #fff;
+    --card-bg: #fff;
     --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo global */
@@ -24,28 +26,27 @@ header {
     background-color: var(--header-footer-bg);
     color: var(--header-footer-text);
     text-align: center;
-    padding: 20px 0;
-    position: relative;
+    padding: 40px 20px;
 }
 
 header h1 {
-    font-size: 2.5em;
-    margin: 10px 0;
+    font-size: 3em;
+    margin: 0;
 }
 
 header p {
     font-size: 1.2em;
-    margin: 5px 0;
+    margin: 10px 0 20px;
 }
 
 header .foto-carnet {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 10px;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid var(--accent-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 10px var(--shadow-color);
 }
 
 header .foto-carnet img {
@@ -55,63 +56,102 @@ header .foto-carnet img {
 }
 
 header button {
-    background-color: var(--header-footer-text);
-    color: var(--header-footer-bg);
+    background-color: var(--accent-color);
+    color: var(--header-footer-text);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    margin-top: 10px;
 }
 
 header button:hover {
-    background-color: #555;
-    color: var(--header-footer-text);
+    background-color: #0056b3;
 }
 
 /* Secciones */
 section {
     margin: 20px auto;
     padding: 20px;
-    max-width: 800px;
-    background-color: var(--section-bg);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid var(--accent-color);
+    max-width: 1000px;
 }
 
 section h2 {
     margin-top: 0;
-    font-size: 1.8em;
+    font-size: 2em;
     color: var(--accent-color);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-section p {
-    margin: 10px 0;
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-section ul {
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.card ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 
-section ul li {
+.card ul li {
     padding: 10px 0;
     border-bottom: 1px solid var(--border-color);
 }
 
-section ul li:last-child {
+.card ul li:last-child {
     border-bottom: none;
 }
 
-strong {
+.card strong {
     font-weight: bold;
     color: var(--text-color);
+}
+
+/* Galería de Proyectos */
+#proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.proyecto {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    width: calc(33.333% - 20px);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.proyecto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.proyecto img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.proyecto h3 {
+    font-size: 1.2em;
+    color: var(--accent-color);
+    margin-bottom: 10px;
 }
 
 /* Pie de página */
@@ -119,27 +159,28 @@ footer {
     background-color: var(--header-footer-bg);
     color: var(--header-footer-text);
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     font-size: 0.9em;
-    position: relative;
 }
 
 /* Responsivo */
 @media (max-width: 768px) {
-    section {
-        padding: 15px;
-    }
-
     header h1 {
         font-size: 2em;
-    }
-
-    header p {
-        font-size: 1em;
     }
 
     header .foto-carnet {
         width: 100px;
         height: 100px;
+    }
+
+    .proyecto {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .proyecto {
+        width: 100%;
     }
 }
