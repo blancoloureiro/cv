@@ -1,3 +1,8 @@
+El código CSS que proporcionaste es funcional, pero presenta un problema con el uso de `position: fixed` en el `body`, lo cual hace que todo el contenido quede fijo y no desplazable. Además, el `footer` también está fijo al final de la ventana, lo que puede causar superposición con el contenido si hay demasiado texto.
+
+Aquí tienes una versión ajustada y optimizada:
+
+```css
 /* Estilo básico para la página */
 body {
     font-family: Arial, sans-serif;
@@ -5,9 +10,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    position: fixed;
 }
 
+/* Encabezado */
 header {
     background-color: #333;
     color: #fff;
@@ -23,10 +28,11 @@ header p {
     font-size: 1.2em;
 }
 
+/* Foto de carnet */
 .foto-carnet {
     width: 120px;
     height: 120px;
-    margin: 0 auto;
+    margin: 20px auto;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid #fff;
@@ -39,9 +45,11 @@ header p {
     object-fit: cover;
 }
 
+/* Secciones */
 section {
-    margin: 20px;
+    margin: 20px auto;
     padding: 20px;
+    max-width: 800px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -51,16 +59,17 @@ section h2 {
     color: #333;
 }
 
+/* Pie de página */
 footer {
     text-align: center;
     padding: 10px;
     background-color: #333;
     color: white;
-    position: fixed;
+    position: relative; /* Cambiado a 'relative' para evitar superposición */
     width: 100%;
-    bottom: 0;
 }
 
+/* Listas */
 ul {
     list-style-type: none;
     padding-left: 0;
@@ -70,6 +79,15 @@ ul li {
     padding: 5px 0;
 }
 
+/* Texto en negrita */
 strong {
     font-weight: bold;
 }
+```
+
+### Cambios realizados:
+1. **`position: fixed` eliminado en `body`:** Ahora el contenido puede desplazarse.
+2. **`footer` ajustado a `position: relative`:** Evita superposición con el contenido y se ubica después del contenido principal.
+3. **`max-width` agregado a `section`:** Hace que el diseño sea más legible en pantallas grandes.
+4. **Margen adicional en `.foto-carnet`:** Mejora el espaciado visual.
+
