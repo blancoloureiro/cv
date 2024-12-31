@@ -1,7 +1,9 @@
-// script.js
+
 document.getElementById('themeToggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-    if (document.body.classList.contains('dark-theme')) {
+    // Alternar el tema oscuro
+    const darkThemeEnabled = document.body.classList.toggle('dark-theme');
+
+    if (darkThemeEnabled) {
         document.documentElement.style.setProperty('--bg-color', '#333');
         document.documentElement.style.setProperty('--text-color', '#fff');
         document.documentElement.style.setProperty('--header-footer-bg', '#555');
