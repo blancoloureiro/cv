@@ -1,17 +1,18 @@
+const themeToggle = document.getElementById('themeToggle');
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-document.getElementById('themeToggle').addEventListener('click', () => {
-    // Alternar el tema oscuro
-    const darkThemeEnabled = document.body.classList.toggle('dark-theme');
+const setTheme = (isDark) => {
+    document.body.classList.toggle('dark-theme', isDark);
+    themeToggle.textContent = isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+};
 
-    if (darkThemeEnabled) {
-        document.documentElement.style.setProperty('--bg-color', '#333');
-        document.documentElement.style.setProperty('--text-color', '#fff');
-        document.documentElement.style.setProperty('--header-footer-bg', '#555');
-        document.documentElement.style.setProperty('--header-footer-text', '#eee');
-    } else {
-        document.documentElement.style.setProperty('--bg-color', '#f4f4f4');
-        document.documentElement.style.setProperty('--text-color', '#333');
-        document.documentElement.style.setProperty('--header-footer-bg', '#333');
-        document.documentElement.style.setProperty('--header-footer-text', '#fff');
-    }
+setTheme(prefersDarkScheme.matches);
+
+prefersDarkScheme.addEventListener('change', (event) => {
+    setTheme(event.matches);
+});
+
+themeToggle.addEventListener('click', () => {
+    const isDark = !document.body.classList.contains('dark-theme');
+    setTheme(isDark);
 });
