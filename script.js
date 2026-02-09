@@ -1,17 +1,35 @@
+const themeToggle = document.getElementById('themeToggle');
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-document.getElementById('themeToggle').addEventListener('click', () => {
-    // Alternar el tema oscuro
-    const darkThemeEnabled = document.body.classList.toggle('dark-theme');
+const setTheme = (isDark) => {
+    document.body.classList.toggle('light-theme', !isDark);
+    themeToggle.querySelector('.icon-button__icon').textContent = isDark ? '🌙' : '☀️';
+    themeToggle.querySelector('.icon-button__text').textContent = isDark
+        ? 'Modo oscuro'
+        : 'Modo claro';
+};
 
-    if (darkThemeEnabled) {
-        document.documentElement.style.setProperty('--bg-color', '#333');
-        document.documentElement.style.setProperty('--text-color', '#fff');
-        document.documentElement.style.setProperty('--header-footer-bg', '#555');
-        document.documentElement.style.setProperty('--header-footer-text', '#eee');
-    } else {
-        document.documentElement.style.setProperty('--bg-color', '#f4f4f4');
-        document.documentElement.style.setProperty('--text-color', '#333');
-        document.documentElement.style.setProperty('--header-footer-bg', '#333');
-        document.documentElement.style.setProperty('--header-footer-text', '#fff');
-    }
+setTheme(prefersDarkScheme.matches);
+
+prefersDarkScheme.addEventListener('change', (event) => {
+    setTheme(event.matches);
 });
+
+themeToggle.addEventListener('click', () => {
+    const isDark = !document.body.classList.contains('light-theme');
+    setTheme(!isDark);
+});
+
+const animatedSections = document.querySelectorAll('[data-animate]');
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    },
+    { threshold: 0.2 }
+);
+
+animatedSections.forEach((section) => observer.observe(section));
