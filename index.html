@@ -3,57 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Currículum</title>
+    <title>Angel Blanco Loureiro | Currículum</title>
+    <meta name="description" content="Currículum de Angel Jesús Blanco Loureiro: experiencia en soporte técnico, redes y administración de sistemas.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="foto-carnet">
-            <img src="https://avatars.githubusercontent.com/u/112012032?v=4" alt="Foto de Juan Pérez">
+    <header class="hero">
+        <div class="hero__content">
+            <div class="foto-carnet">
+                <img src="https://avatars.githubusercontent.com/u/112012032?v=4" alt="Foto de Angel Jesús Blanco Loureiro">
+            </div>
+            <div class="hero__info">
+                <p class="hero__eyebrow">Soporte técnico & sistemas</p>
+                <h1>Angel Jesús Blanco Loureiro</h1>
+                <p class="hero__lead">Especialista en soporte técnico, redes y automatización con foco en experiencia del usuario y resolución eficaz de incidencias.</p>
+                <div class="hero__actions">
+                    <a class="button button--primary" href="mailto:anxoblanco@gmail.com">Contactar</a>
+                    <button id="themeToggle" class="button button--ghost" type="button">Cambiar tema</button>
+                </div>
+                <div class="hero__meta">
+                    <span>📍 Carballo, A Coruña</span>
+                    <span>📞 +34 605 34 35 10</span>
+                    <span>✉️ anxoblanco@gmail.com</span>
+                </div>
+            </div>
         </div>
-        <h1>Mi Currículum</h1>
-        <p>Bienvenidos a mi página web personal. Aquí podrás conocer más sobre mi experiencia y habilidades.</p>
-        <button id="themeToggle">Cambiar Tema</button>
     </header>
 
-    <section id="info-personal">
-        <h2>Información Personal</h2>
-        <p><strong>Nombre:</strong> Angel Jesús Blanco Loureiro</p>
-        <p><strong>Email:</strong> anxoblanco@gmail.com</p>
-        <p><strong>Teléfono:</strong> +34 605 34 35 10</p>
-        <p><strong>Dirección:</strong> Carballo, Acoruña 
-    </section>
+    <main>
+        <section class="section">
+            <div class="section__header">
+                <h2>Perfil profesional</h2>
+                <p>Más de 10 años en soporte help desk y asesoramiento TIC, con enfoque en diagnóstico rápido, comunicación clara y mejora continua.</p>
+            </div>
+            <div class="grid grid--2">
+                <article class="card">
+                    <h3>Fortalezas</h3>
+                    <ul class="list">
+                        <li>Gestión integral de incidencias y seguimiento con SLAs.</li>
+                        <li>Documentación de procedimientos y guías para usuarios.</li>
+                        <li>Coordinación con equipos de redes y sistemas.</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>Especialidades</h3>
+                    <ul class="list">
+                        <li>Monitorización con Zabbix y plataformas ITSM.</li>
+                        <li>Administración de hardware, software y periféricos.</li>
+                        <li>Automatización con Bash y scripting básico.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
 
-    <section id="educacion">
-        <h2>Educación</h2>
-        <ul>
-            <li><strong>FPII- Administración Sistemas Informaticos en Red</strong> -  IES Parga Pondal(2012- 2014)</li>
-            <li><strong> Bachillerato </strong> -  IES Alfredo Brañas (2010- 2012) </li>
-        </ul>
-    </section>
+        <section class="section section--alt" id="experiencia">
+            <div class="section__header">
+                <h2>Experiencia profesional</h2>
+                <p>Trayectoria en soporte técnico y asesoramiento, con foco en resolución de problemas y atención multicanal.</p>
+            </div>
+            <div class="timeline">
+                <article class="timeline__item">
+                    <div class="timeline__meta">2024 - Actualidad</div>
+                    <h3>Technical Support Help Desk · Konecta Group</h3>
+                    <p>Soporte técnico a usuarios, diagnóstico de incidencias y coordinación con equipos de segundo nivel.</p>
+                </article>
+                <article class="timeline__item">
+                    <div class="timeline__meta">2023 - 2024</div>
+                    <h3>Technical Support Help Desk · ABAI</h3>
+                    <p>Resolución de incidencias, documentación de soluciones y atención omnicanal.</p>
+                </article>
+                <article class="timeline__item">
+                    <div class="timeline__meta">2018 - 2023</div>
+                    <h3>Technical Support Help Desk · Oesia Networks</h3>
+                    <p>Seguimiento de tickets, soporte remoto, y cumplimiento de SLAs en entornos críticos.</p>
+                </article>
+                <article class="timeline__item">
+                    <div class="timeline__meta">2014 - 2018</div>
+                    <h3>Técnico Informático / Asesor ventas TIC · App Informática</h3>
+                    <p>Asesoramiento tecnológico, mantenimiento de equipos y atención al cliente.</p>
+                </article>
+            </div>
+        </section>
 
-    <section id="experiencia">
-        <h2>Experiencia Profesional</h2>
-        <ul>
-            <li><strong>Technical Support Help Desk </strong> - Konecta Group (2024-Actualidad)</li>
-            <li><strong>Technical Support Help Desk </strong> - ABAI (2023-2024)</li>
-            <li><strong>Technical Support Help Desk </strong> - Oesia Networks (2018-2023)</li>
-            <li><strong>Tecnico Informatico / Asesor ventas TIC </strong> - App Informatica  (2014 -2018)</li>
-        </ul>
-    </section>
+        <section class="section" id="educacion">
+            <div class="section__header">
+                <h2>Educación</h2>
+                <p>Formación en sistemas y bases tecnológicas sólidas para el soporte IT.</p>
+            </div>
+            <div class="grid grid--2">
+                <article class="card">
+                    <h3>FPII Administración de Sistemas Informáticos en Red</h3>
+                    <p>IES Parga Pondal · 2012 - 2014</p>
+                </article>
+                <article class="card">
+                    <h3>Bachillerato</h3>
+                    <p>IES Alfredo Brañas · 2010 - 2012</p>
+                </article>
+            </div>
+        </section>
 
-    <section id="habilidades">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>Gestion Incidencias telefonicas , Zabbix, Remedy, Hardware</li>
-            <li> Redes </li>
-            <li> Linux, Bash scripting </li>
-            <li>HTML, CSS, JavaScript </li>
-        </ul>
-    </section>
+        <section class="section section--alt" id="habilidades">
+            <div class="section__header">
+                <h2>Habilidades clave</h2>
+                <p>Herramientas, tecnologías y competencias destacadas.</p>
+            </div>
+            <div class="skills">
+                <div class="skill-group">
+                    <h3>Soporte y operaciones</h3>
+                    <div class="chips">
+                        <span>Gestión de incidencias</span>
+                        <span>ITSM / Remedy</span>
+                        <span>Monitorización Zabbix</span>
+                        <span>Soporte remoto</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Infraestructura</h3>
+                    <div class="chips">
+                        <span>Redes</span>
+                        <span>Hardware</span>
+                        <span>Linux</span>
+                        <span>Administración básica</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3>Automatización</h3>
+                    <div class="chips">
+                        <span>Bash scripting</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contacto">
+            <div class="section__header">
+                <h2>Contacto</h2>
+                <p>¿Buscas un perfil de soporte técnico con visión de servicio? Conectemos.</p>
+            </div>
+            <div class="contact-card">
+                <div>
+                    <h3>Disponible para oportunidades</h3>
+                    <p>Respondo en menos de 24h para nuevas propuestas.</p>
+                </div>
+                <div class="contact-actions">
+                    <a class="button button--primary" href="mailto:anxoblanco@gmail.com">Enviar correo</a>
+                    <a class="button button--ghost" href="tel:+34605343510">Llamar</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 Angel Blanco Loureiro . Todos los derechos reservados.</p>
+        <p>&copy; 2024 Angel Blanco Loureiro. Todos los derechos reservados.</p>
     </footer>
     <script src="script.js"></script>
 </body>
