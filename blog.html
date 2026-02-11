@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Blanco Loureiro | Blog</title>
+    <meta name="description" content="Blog personal de Angel Jesús Blanco Loureiro para publicar artículos sobre soporte técnico, sistemas y aprendizaje continuo.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero__content">
+            <div class="hero__info">
+                <p class="hero__eyebrow">Blog personal</p>
+                <h1>Blog</h1>
+                <p class="hero__lead">Un espacio para publicar artículos sobre soporte técnico, sistemas y automatización.</p>
+                <div class="hero__actions">
+                    <a class="button button--primary" href="index.html">Volver al CV</a>
+                    <button id="themeToggle" class="button button--ghost" type="button">Cambiar tema</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="section__header">
+                <h2>Nuevo artículo</h2>
+                <p>Completa el formulario para añadir una nueva entrada al blog.</p>
+            </div>
+            <article class="card">
+                <form id="blogForm" class="blog-form">
+                    <label for="postTitle">Título</label>
+                    <input id="postTitle" name="title" type="text" placeholder="Ej: Cómo diagnosticar incidencias de red" required>
+
+                    <label for="postDate">Fecha</label>
+                    <input id="postDate" name="date" type="date" required>
+
+                    <label for="postExcerpt">Resumen breve</label>
+                    <textarea id="postExcerpt" name="excerpt" rows="2" placeholder="Una introducción corta del artículo" required></textarea>
+
+                    <label for="postContent">Contenido</label>
+                    <textarea id="postContent" name="content" rows="6" placeholder="Escribe aquí el contenido del artículo..." required></textarea>
+
+                    <button class="button button--primary" type="submit">Publicar artículo</button>
+                </form>
+            </article>
+        </section>
+
+        <section class="section section--alt">
+            <div class="section__header">
+                <h2>Artículos publicados</h2>
+                <p>Las entradas se guardan en este navegador para que puedas seguir ampliando tu blog personal.</p>
+            </div>
+            <div id="postsList" class="blog-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Angel Blanco Loureiro. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>
